@@ -1,0 +1,2 @@
+version=3
+https://github.com/EliasOenal/multimon-ng/tags .*/v?(\d\S+)\.tar\.gz

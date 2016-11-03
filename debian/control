@@ -1,0 +1,27 @@
+Source: multimon-ng
+Section: comm
+Priority: optional
+Maintainer: mttronc <mrtn.mtth@gmx.de>
+Build-Depends: debhelper (>= 9), qt4-qmake, libx11-dev, libpulse-dev
+Standards-Version: 3.9.8
+Homepage: https://github.com/EliasOenal/multimon-ng
+Vcs-Git: git@github.com:mttronc/deb-multimon-ng.git
+Vcs-Browser: https://github.com/mttronc/deb-multimon-ng
+
+Package: multimon-ng
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Linux Radio Transmission Decoder
+ multimon-ng a fork of multimon. It decodes the following digital transmission
+ modes:
+ .
+    POCSAG512 POCSAG1200 POCSAG2400
+    FLEX
+    EAS
+    UFSK1200 CLIPFSK AFSK1200 AFSK2400 AFSK2400_2 AFSK2400_3
+    HAPN4800
+    FSK9600
+    DTMF
+    ZVEI1 ZVEI2 ZVEI3 DZVEI PZVEI
+    EEA EIA CCIR
+    MORSE CW
