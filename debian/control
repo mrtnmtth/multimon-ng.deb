@@ -2,7 +2,7 @@ Source: multimon-ng
 Section: comm
 Priority: optional
 Maintainer: mttronc <mrtn.mtth@gmx.de>
-Build-Depends: debhelper (>= 9), qt4-qmake, libx11-dev, libpulse-dev
+Build-Depends: debhelper (>= 9), qt4-qmake, libqt4-dev, libx11-dev, libpulse-dev
 Standards-Version: 3.9.8
 Homepage: https://github.com/EliasOenal/multimon-ng
 Vcs-Git: git@github.com:mttronc/deb-multimon-ng.git
