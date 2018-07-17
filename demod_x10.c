@@ -16,19 +16,9 @@
  */
 
 /* ---------------------------------------------------------------------- */
-
 #include "multimon.h"
-#include <sys/types.h>
-#include <sys/wait.h>
-#include <sys/time.h>
-#include <sys/resource.h>
-#include <signal.h>
-#include <math.h>
 #include <string.h>
 #include <stdio.h>
-#include <unistd.h>
-
-
 /* ---------------------------------------------------------------------- */
 
 static const char housecode[] = "MECKOGAINFDLPHBJ";
@@ -131,19 +121,14 @@ static void x10_report(struct demod_state *s, int clr) {
 
 static void x10_demod(struct demod_state *s, buffer_t buffer, int length)
 {
-    short *src;
-    float div, f;
+    const short *src;
     int i;
     int bits = 0;
 
     verbprintf(2, "x10_demod length=%d, current_sequence=%d\n", length, s->l1.x10.current_sequence);
 
-
-    div =  (SAMPLING_RATE/ 1000.0f );
     src = buffer.sbuffer;
     for ( i=0 ; i < length ; i++, src++) {
-	uint32_t ptop;
-	float ptopf;
 
 	// Start of 9ms high preable (part 1)
 	if ( s->l1.x10.current_stage == 0 ) {
@@ -172,7 +157,7 @@ static void x10_demod(struct demod_state *s, buffer_t buffer, int length)
 		    s->l1.x10.current_stage = 2;
 		    s->l1.x10.last_rise = i + s->l1.x10.current_sequence;
 		} else {
-		    fprintf(stderr, "stage 1 fail1\n");
+            verbprintf(9, "stage 1 fail1\n");
 		    s->l1.x10.current_stage = 0;
 		}
 		continue;
