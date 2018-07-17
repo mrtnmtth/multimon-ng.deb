@@ -1,3 +1,9 @@
+multimon-ng (1.1.5-mtt0) unstable; urgency=medium
+
+  * New upstream version 1.1.5
+
+ -- mttronc <mrtn.mtth@gmx.de>  Tue, 17 Jul 2018 14:20:28 +0200
+
 multimon-ng (1.1.4-mtt0) unstable; urgency=medium
 
   * Initial release
